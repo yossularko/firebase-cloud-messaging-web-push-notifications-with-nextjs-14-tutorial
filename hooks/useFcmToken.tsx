@@ -87,6 +87,7 @@ const useFcmToken = () => {
     if ("Notification" in window) {
       loadToken();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -161,7 +162,7 @@ const useFcmToken = () => {
 
     // Step 11: Cleanup the listener when the component unmounts.
     return () => unsubscribe?.();
-  }, [token, router, toast]);
+  }, [token, router]);
 
   return { token, notificationPermissionStatus }; // Return the token and permission status.
 };
